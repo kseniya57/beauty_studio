@@ -1,0 +1,1 @@
+export const track = (event) => () => fbq('track', event);

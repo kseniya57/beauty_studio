@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Салон моделирования взгляда</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!— Facebook Pixel Code —>
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '450368962541536');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                       src="https://www.facebook.com/tr?id=450368962541536&ev=PageVie.."
+        /></noscript>
+        <!— End Facebook Pixel Code —>
+    </head>
+    <body>
+        <div id="root"></div>
+        <% if(process.env.NODE_ENV === 'production') { %>
+            <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+            <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <% } %>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=4803e919-8b89-44a0-8680-9308bbd204a1&lang=ru_RU" type="text/javascript"></script>
+    </body>
+</html>

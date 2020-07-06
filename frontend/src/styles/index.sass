@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,600|EB+Garamond:400,600|Roboto:300|Material+Icons+Round")
+@import "slick"
+$text-color--base: #0E3C53
+$text-color--light: #8A97A6
+
+@mixin respond($breakpoint)
+    @if $breakpoint == phone
+      @media only screen and (max-width: 37.5em)
+        @content    //600px
+    @if $breakpoint == tab-port
+      @media only screen and (max-width: 56.25em)
+        @content     //900px
+    @if $breakpoint == tab-land
+      @media only screen and (max-width: 75em)
+        @content   //1200px
+
+html
+  box-sizing: border-box
+  // This defines what 1rem is
+  font-size: 62.5% //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land)
+        font-size: 56.25% //1 rem = 9px, 9/16 = 50%
+
+  @include respond(tab-port) // width < 900?
+        font-size: 50% //1 rem = 8px, 8/16 = 50%
+
+*, *::before, *::after
+  box-sizing: inherit
+  font-family: inherit
+  outline: none
+
+*:not(input)
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+body
+  margin: 0
+  padding: 0
+  overflow-x: hidden
+  width: 100%
+  font-family: Merriweather, palatino, "book antiqua", palatino linotype, serif
+  font-size: 1.6rem
+  line-height: 1.5
+  font-weight: 400
+  text-align: left
+  color: $text-color--base
+
+#root
+  width: 100%
+  @media (min-width: 700px)
+    margin-top: 12rem
+
+::-webkit-scrollbar
+  display: none
+
+p, h1, h2, h3, h4, h5, h6, ul, blockquote
+  padding: 0
+  margin: 0
+  color: $text-color--base
+
+ul
+  list-style-type: none
+
+img
+  width: 100%
+  height: auto
+  max-height: 100%
+
+a
+  cursor: pointer
+  &, &:link
+    color: $text-color--base
+    &:not(.underline)
+      text-decoration: none
+
+section
+  margin-top: 3rem
+  margin-bottom: 3rem
+
+  &.disabled
+    color: $text-color--light
+    cursor: default
+
+.layout
+  margin: 0 auto
+  @media(min-width: 576px)
+    max-width: 540px
+  @media(min-width: 768px)
+    max-width: 720px
+  @media(min-width: 992px)
+    max-width: 960px
+  @media(min-width: 1200px)
+    max-width: 1140px
+
+.fullwidth
+  width: 100%
+
+.fullheight
+  height: 100%
+
+li
+  list-style-position: inside
+  margin-bottom: 0.5rem
+  @media only screen and (min-width: 600px)
+    white-space: nowrap
+
+.emoji
+  width: 16px
+  height: 16px
+  border: none
+  vertical-align: -2px
+  margin: 0 1px
+  display: inline-block
+  overflow: hidden
+
+
+
